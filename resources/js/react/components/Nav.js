@@ -3,9 +3,10 @@ import { connect } from 'react-redux'
 
 class Nav extends Component {
     render() {
+        console.log('Nav render -> '+new Date().toLocaleTimeString())
         let loginReg = "";
         let withAuth = "";
-        if(!this.props.auth) {
+        if(!this.props.isAuthenticated) {
             loginReg = (
                 <React.Fragment>
                     <li className="nav-item"><a className="nav-link" href="/login">Login</a></li>
@@ -16,7 +17,7 @@ class Nav extends Component {
             withAuth = (
                 <li className="nav-item dropdown">
                     <a id="navbarDropdown" className="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        { this.props.auth_info.name } <span className="caret"></span>
+                        { this.props.user.name } <span className="caret"></span>
                     </a>
 
                     <div className="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
@@ -49,6 +50,9 @@ class Nav extends Component {
     }
 }
 const mapStateToProps = (state)=>{
-    return state;
+    return {
+        isAuthenticated: state.auth.isAuthenticated,
+        user: state.auth.user
+    };
 };
 export default connect(mapStateToProps,null)(Nav);

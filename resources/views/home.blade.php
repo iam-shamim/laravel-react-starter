@@ -24,8 +24,8 @@
 <!-- Scripts -->
 <script>
     const page_data = {
-        auth: '{!! auth()->check() !!}' === '1',
-        auth_info: JSON.parse('{!! auth()->user()->toJson() !!}')
+        isAuthenticated: '{!! auth()->check() !!}' === '1',
+        user: JSON.parse('{!! auth()->check()?auth()->user()->toJson():'{}' !!}')
     }
 </script>
 <script src="{{ asset('js/app.js') }}" defer></script>
