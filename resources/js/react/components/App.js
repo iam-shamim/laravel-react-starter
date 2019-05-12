@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, lazy, Suspense } from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux'
 import  { createStore, applyMiddleware } from 'redux';
@@ -7,9 +7,11 @@ import thunk from 'redux-thunk';
 import {BrowserRouter,Route, Switch} from 'react-router-dom'
 
 import rootReducer from '../rootReducer'
-
+import {component_load} from '../utils/component_load';
+import notAuth from '../utils/notAuth';
+import requireAuth from '../utils/requireAuth';
 import Nav from './Nav'
-import Login from './Login'
+import Home from './Home';
 
 export default class App extends Component {
     render() {
@@ -19,15 +21,18 @@ export default class App extends Component {
                 <main className="py-4">
                     <div className="container">
                         <Switch>
-                            <Route path="/login" exact  component={Login} />
+                            <Route path="/" exact  component={requireAuth(Home)} />
+                            <Route path="/login" exact  component={notAuth(component_load('auth/Login'))} />
+                            <Route path="/register" exact  component={notAuth(component_load('auth/Signup'))} />
+                            <Route path="/password/reset" exact  component={notAuth(component_load('auth/PasswordReset'))} />
                         </Switch>
-                        <Login />
                     </div>
                 </main>
             </div>
         );
     }
 }
+
 
 const store = createStore(
     rootReducer,

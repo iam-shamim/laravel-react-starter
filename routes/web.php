@@ -10,12 +10,13 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-Route::get('/{path?}', function () {
-    return view('home');
+Route::prefix('api')->group(function(){
+    Route::post('login','Auth\LoginController@login');
 });
-
-
+Route::get('/{path}', function () {
+    return view('home');
+})->where('path', '.*');
+return;
 Route::get('/', function () {
     return view('welcome');
 });

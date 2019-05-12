@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
+import { NavLink } from 'react-router-dom'
 
 class Nav extends Component {
     render() {
@@ -9,8 +10,8 @@ class Nav extends Component {
         if(!this.props.isAuthenticated) {
             loginReg = (
                 <React.Fragment>
-                    <li className="nav-item"><a className="nav-link" href="/login">Login</a></li>
-                    <li className="nav-item"><a className="nav-link" href="/register">Register</a></li>
+                    <li className="nav-item"><NavLink className="nav-link" to="/login">Login</NavLink></li>
+                    <li className="nav-item"><NavLink className="nav-link" to="/register">Register</NavLink></li>
                 </React.Fragment>
             );
         }else{
@@ -31,9 +32,9 @@ class Nav extends Component {
         return (
             <nav className="navbar navbar-expand-md navbar-light navbar-laravel">
                 <div className="container">
-                    <a className="navbar-brand" href="/">
+                    <NavLink className="navbar-brand" to="/">
                         Shopint Cart
-                    </a>
+                    </NavLink>
                     <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                         <span className="navbar-toggler-icon"></span>
                     </button>

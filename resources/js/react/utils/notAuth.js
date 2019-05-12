@@ -3,15 +3,15 @@ import { connect } from 'react-redux';
 
 export default function (ComposedComponent) {
     class Authenticate extends Component{
-        componentWillMount(){
+        render() {
             if(this.props.isAuthenticated){
                 this.props.history.replace('/');
+                return false;
+            }else{
+                return (
+                    <ComposedComponent {...this.props} />
+                );   
             }
-        }
-        render() {
-            return (
-                <ComposedComponent {...this.props} />
-            );
         }
     }
     function mapStateToProps(state) {

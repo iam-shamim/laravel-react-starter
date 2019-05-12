@@ -1,5 +1,19 @@
 import React from 'react';
+import {NavLink} from 'react-router-dom'
+import axios from 'axios';
 export default ()=>{
+    const onSubmit = (e)=> {
+        e.preventDefault();
+        axios.post('/api/login',{
+            email: e.target.email.value,
+            email: e.target.email.value,
+            remember: e.target.remember.checked
+        }).then((res)=>{
+            console.log('res:',res);
+        }).catch((err)=>{
+            console.log(err);
+        });
+    };
     return (
         <div className="row justify-content-center">
             <div className="col-md-8">
@@ -7,7 +21,7 @@ export default ()=>{
                     <div className="card-header">Login</div>
 
                     <div className="card-body">
-                        <form method="POST" action="/login">
+                        <form method="POST" action="/login" onSubmit={onSubmit}>
                             <div className="form-group row">
                                 <label htmlFor="email" className="col-md-4 col-form-label text-md-right">E-Mail Address</label>
 
@@ -35,8 +49,10 @@ export default ()=>{
 
                             <div className="form-group row mb-0">
                                 <div className="col-md-8 offset-md-4">
-                                    <button type="submit" className="btn btn-primary">Login</button>
-                                    <a className="btn btn-link" href="/password/reset">Forgot Your Password?</a>
+                                    <button type="submit" className="btn btn-primary">
+                                        <i className="fa fa-refresh fa-spin"></i> Login
+                                    </button>
+                                    <NavLink className="btn btn-link" to="/password/reset">Forgot Your Password?</NavLink>
                                 </div>
                             </div>
                         </form>
