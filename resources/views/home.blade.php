@@ -19,14 +19,12 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 <body>
-<div id="root">
+<div id="root"></div>
 
-</div>
-<!-- Scripts -->
 <script>
     const page_data = {
         isAuthenticated: '{!! auth()->check() !!}' === '1',
-        user: JSON.parse('{!! auth()->check()?auth()->user()->toJson():'{}' !!}')
+        user: JSON.parse('{!! auth()->check()?json_encode(auth()->user()->only(['id','name','email'])):'{}' !!}')
     }
 </script>
 <script src="{{ asset('js/app.js') }}" defer></script>

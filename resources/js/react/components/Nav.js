@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import { NavLink } from 'react-router-dom'
+import { logout } from '../store/action/authAction';
 
 class Nav extends Component {
     render() {
@@ -22,9 +23,9 @@ class Nav extends Component {
                     </a>
 
                     <div className="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                        <a className="dropdown-item" href="/logout">
+                        <span className="pointer dropdown-item" onClick={this.props.logout}>
                             Logout
-                        </a>
+                        </span>
                     </div>
                 </li>
             )
@@ -56,4 +57,4 @@ const mapStateToProps = (state)=>{
         user: state.auth.user
     };
 };
-export default connect(mapStateToProps,null)(Nav);
+export default connect(mapStateToProps,{logout})(Nav);

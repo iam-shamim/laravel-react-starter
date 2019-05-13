@@ -6,6 +6,8 @@ use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
 use Validator;
+use Auth;
+use Exception;
 
 class LoginController extends Controller
 {
@@ -38,18 +40,38 @@ class LoginController extends Controller
         $this->middleware('guest')->except('logout');
     }
     public function login(Request $request){
-        $validator = Validator::make($request->all(),[
-            'email' => 'required|string',
-            'password' => 'required|string',
-        ]);
-        if($validator->fails()){
-            return response()->json($validator->messages(), 200);
-        }
-        $credentials = $request->only('email', 'password');
+        try{
+            $validator = Validator::make($request->all(),[
+                'email' => 'required|string',
+                'password' => 'required|string',
+            ]);
+            if($validator->fails()){
+                throw new Exception('');
+                //return response()->json($validator->messages(), 422);
+            }
+            $credentials = $request->only('email', 'password');
 
-        if (Auth::attempt($credentials)) {
-            return redirect()->intended('dashboard');
+            if (Auth::attempt($credentials)) {
+                return response()->json(Auth::user()->only(['id','name','email']));
+            }else{
+                return response()->json([
+                    'status'=> 'error',
+                    'msg'   => 'login failed'
+                ], 400);
+            }
+        }catch (Exception $exception){
+            return response()->json([
+                'status'=> 'error',
+                'msg'   => 'login failed'
+            ], 400);
         }
-
+    }
+    public function logout(Request $request){
+        Auth::logout();
+        return;
+        
+        $this->guard()->logout();
+        $request->session()->invalidate();
+        return $this->loggedOut($request) ?: redirect('/');
     }
 }

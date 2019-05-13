@@ -62178,7 +62178,7 @@ function warning(message) {
 /*!***************************************************************!*\
   !*** ./node_modules/react-router-dom/esm/react-router-dom.js ***!
   \***************************************************************/
-/*! exports provided: BrowserRouter, HashRouter, Link, NavLink, MemoryRouter, Prompt, Redirect, Route, Router, StaticRouter, Switch, generatePath, matchPath, withRouter, __RouterContext */
+/*! exports provided: MemoryRouter, Prompt, Redirect, Route, Router, StaticRouter, Switch, generatePath, matchPath, withRouter, __RouterContext, BrowserRouter, HashRouter, Link, NavLink */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -67961,53 +67961,77 @@ if (token) {
 
 var map = {
 	"./App": [
-		"./resources/js/react/components/App.js"
+		"./resources/js/react/components/App.js",
+		9
 	],
 	"./App.js": [
-		"./resources/js/react/components/App.js"
+		"./resources/js/react/components/App.js",
+		9
 	],
 	"./Example": [
 		"./resources/js/react/components/Example.js",
+		9,
 		0
 	],
 	"./Example.js": [
 		"./resources/js/react/components/Example.js",
+		9,
 		0
 	],
 	"./Home": [
-		"./resources/js/react/components/Home.js"
+		"./resources/js/react/components/Home.js",
+		9
 	],
 	"./Home.js": [
-		"./resources/js/react/components/Home.js"
+		"./resources/js/react/components/Home.js",
+		9
 	],
 	"./Nav": [
-		"./resources/js/react/components/Nav.js"
+		"./resources/js/react/components/Nav.js",
+		9
 	],
 	"./Nav.js": [
-		"./resources/js/react/components/Nav.js"
+		"./resources/js/react/components/Nav.js",
+		9
+	],
+	"./UI/AlertUI": [
+		"./resources/js/react/components/UI/AlertUI.js",
+		7,
+		4
+	],
+	"./UI/AlertUI.js": [
+		"./resources/js/react/components/UI/AlertUI.js",
+		7,
+		4
 	],
 	"./auth/Login": [
 		"./resources/js/react/components/auth/Login.js",
+		9,
 		1
 	],
 	"./auth/Login.js": [
 		"./resources/js/react/components/auth/Login.js",
+		9,
 		1
 	],
 	"./auth/PasswordReset": [
 		"./resources/js/react/components/auth/PasswordReset.js",
+		9,
 		2
 	],
 	"./auth/PasswordReset.js": [
 		"./resources/js/react/components/auth/PasswordReset.js",
+		9,
 		2
 	],
 	"./auth/Signup": [
 		"./resources/js/react/components/auth/Signup.js",
+		9,
 		3
 	],
 	"./auth/Signup.js": [
 		"./resources/js/react/components/auth/Signup.js",
+		9,
 		3
 	]
 };
@@ -68021,8 +68045,8 @@ function webpackAsyncContext(req) {
 	}
 
 	var ids = map[req], id = ids[0];
-	return Promise.all(ids.slice(1).map(__webpack_require__.e)).then(function() {
-		return __webpack_require__(id);
+	return Promise.all(ids.slice(2).map(__webpack_require__.e)).then(function() {
+		return __webpack_require__.t(id, ids[1])
 	});
 }
 webpackAsyncContext.keys = function webpackAsyncContextKeys() {
@@ -68215,6 +68239,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+/* harmony import */ var _store_action_authAction__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../store/action/authAction */ "./resources/js/react/store/action/authAction.js");
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -68232,6 +68257,7 @@ function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.g
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
 
 
 
@@ -68283,9 +68309,9 @@ function (_Component) {
         })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "dropdown-menu dropdown-menu-right",
           "aria-labelledby": "navbarDropdown"
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-          className: "dropdown-item",
-          href: "/logout"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+          className: "pointer dropdown-item",
+          onClick: this.props.logout
         }, "Logout")));
       }
 
@@ -68325,7 +68351,9 @@ var mapStateToProps = function mapStateToProps(state) {
   };
 };
 
-/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_1__["connect"])(mapStateToProps, null)(Nav));
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_1__["connect"])(mapStateToProps, {
+  logout: _store_action_authAction__WEBPACK_IMPORTED_MODULE_3__["logout"]
+})(Nav));
 
 /***/ }),
 
@@ -68348,6 +68376,93 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/react/server.js":
+/*!**************************************!*\
+  !*** ./resources/js/react/server.js ***!
+  \**************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
+
+/* harmony default export */ __webpack_exports__["default"] = (axios__WEBPACK_IMPORTED_MODULE_0___default.a.create({
+  baseURL: 'http://localhost:8000'
+}));
+
+/***/ }),
+
+/***/ "./resources/js/react/store/action/authAction.js":
+/*!*******************************************************!*\
+  !*** ./resources/js/react/store/action/authAction.js ***!
+  \*******************************************************/
+/*! exports provided: logout, login */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "logout", function() { return logout; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "login", function() { return login; });
+/* harmony import */ var _server__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../server */ "./resources/js/react/server.js");
+/* harmony import */ var _types__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./types */ "./resources/js/react/store/action/types.js");
+/* harmony import */ var _utils_errorCatch__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../utils/errorCatch */ "./resources/js/react/utils/errorCatch.js");
+
+
+
+
+var setCurrentUser = function setCurrentUser(user) {
+  return {
+    type: _types__WEBPACK_IMPORTED_MODULE_1__["SET_LOGIN_USER"],
+    user: user
+  };
+};
+
+var setLogout = function setLogout() {
+  return {
+    type: _types__WEBPACK_IMPORTED_MODULE_1__["LOGOUT"]
+  };
+};
+
+var logout = function logout() {
+  console.log("Logout");
+  return function (dispatch) {
+    return _server__WEBPACK_IMPORTED_MODULE_0__["default"].post('/api/logout').then(function (res) {
+      dispatch(setLogout());
+    })["catch"](function (err) {
+      return Object(_utils_errorCatch__WEBPACK_IMPORTED_MODULE_2__["default"])(err);
+    });
+  };
+};
+var login = function login(data) {
+  return function (dispatch) {
+    return _server__WEBPACK_IMPORTED_MODULE_0__["default"].post('/api/login', data).then(function (res) {
+      dispatch(setCurrentUser(res.data));
+    })["catch"](function (err) {
+      return Object(_utils_errorCatch__WEBPACK_IMPORTED_MODULE_2__["default"])(err);
+    });
+  };
+};
+
+/***/ }),
+
+/***/ "./resources/js/react/store/action/types.js":
+/*!**************************************************!*\
+  !*** ./resources/js/react/store/action/types.js ***!
+  \**************************************************/
+/*! exports provided: SET_LOGIN_USER, LOGOUT */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SET_LOGIN_USER", function() { return SET_LOGIN_USER; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LOGOUT", function() { return LOGOUT; });
+var SET_LOGIN_USER = 'SET_LOGIN_USER';
+var LOGOUT = 'LOGOUT';
+
+/***/ }),
+
 /***/ "./resources/js/react/store/reducers/auth.js":
 /*!***************************************************!*\
   !*** ./resources/js/react/store/reducers/auth.js ***!
@@ -68357,16 +68472,34 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _action_types__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../action/types */ "./resources/js/react/store/action/types.js");
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; var ownKeys = Object.keys(source); if (typeof Object.getOwnPropertySymbols === 'function') { ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) { return Object.getOwnPropertyDescriptor(source, sym).enumerable; })); } ownKeys.forEach(function (key) { _defineProperty(target, key, source[key]); }); } return target; }
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 var initial_state = _objectSpread({}, page_data);
 
+
 /* harmony default export */ __webpack_exports__["default"] = (function () {
   var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : initial_state;
   var action = arguments.length > 1 ? arguments[1] : undefined;
-  return state;
+
+  switch (action.type) {
+    case _action_types__WEBPACK_IMPORTED_MODULE_0__["SET_LOGIN_USER"]:
+      return _objectSpread({}, state, {
+        isAuthenticated: true,
+        user: action.user
+      });
+
+    case _action_types__WEBPACK_IMPORTED_MODULE_0__["LOGOUT"]:
+      return _objectSpread({}, state, {
+        isAuthenticated: false,
+        user: {}
+      });
+
+    default:
+      return state;
+  }
 });
 
 /***/ }),
@@ -68394,6 +68527,33 @@ var component_load = function component_load(Component) {
     }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(ComponentLoad, props));
   };
 };
+
+/***/ }),
+
+/***/ "./resources/js/react/utils/errorCatch.js":
+/*!************************************************!*\
+  !*** ./resources/js/react/utils/errorCatch.js ***!
+  \************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return errorCatch; });
+function errorCatch(err) {
+  var error = new Error(err.response.statusText);
+  error.response = err.response.data;
+
+  if (!err.response.data.msg) {
+    error.response = {
+      'status': 'error',
+      'error_type': 'server',
+      'msg': 'Server Error. Try again!'
+    };
+  }
+
+  throw error;
+}
 
 /***/ }),
 
