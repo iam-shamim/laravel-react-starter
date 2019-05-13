@@ -1,94 +1,13 @@
 (window["webpackJsonp"] = window["webpackJsonp"] || []).push([[1],{
 
-/***/ "./resources/js/react/components/auth/Signup.js":
-/*!******************************************************!*\
-  !*** ./resources/js/react/components/auth/Signup.js ***!
-  \******************************************************/
+/***/ "./resources/js/react/components/auth/Login.js":
+/*!*****************************************************!*\
+  !*** ./resources/js/react/components/auth/Login.js ***!
+  \*****************************************************/
 /*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports) {
 
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-
-/* harmony default export */ __webpack_exports__["default"] = (function () {
-  console.log('Signup render -> ' + new Date().toLocaleTimeString());
-  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "row justify-content-center"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "col-md-8"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "card"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "card-header"
-  }, "Register"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "card-body"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
-    method: "POST",
-    action: "{{ route('register') }}"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "form-group row"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
-    htmlFor: "name",
-    className: "col-md-4 col-form-label text-md-right"
-  }, "Register"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "col-md-6"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-    id: "name",
-    type: "text",
-    className: "form-control",
-    name: "name",
-    required: true,
-    autoFocus: true
-  }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "form-group row"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
-    htmlFor: "email",
-    className: "col-md-4 col-form-label text-md-right"
-  }, "E-Mail Address"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "col-md-6"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-    id: "email",
-    type: "email",
-    className: "form-control",
-    name: "email",
-    required: true
-  }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "form-group row"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
-    htmlFor: "password",
-    className: "col-md-4 col-form-label text-md-right"
-  }, "Password"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "col-md-6"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-    id: "password",
-    type: "password",
-    className: "form-control",
-    name: "password",
-    required: true
-  }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "form-group row"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
-    htmlFor: "password-confirm",
-    className: "col-md-4 col-form-label text-md-right"
-  }, "Confirm Password"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "col-md-6"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-    id: "password-confirm",
-    type: "password",
-    className: "form-control",
-    name: "password_confirmation",
-    required: true
-  }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "form-group row mb-0"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "col-md-6 offset-md-4"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-    type: "submit",
-    className: "btn btn-primary"
-  }, "Register"))))))));
-});
+throw new Error("Module build failed (from ./node_modules/babel-loader/lib/index.js):\nSyntaxError: /Applications/MAMP/htdocs/blog/resources/js/react/components/auth/Login.js: Support for the experimental syntax 'classProperties' isn't currently enabled (6:21):\n\n\u001b[0m \u001b[90m 4 | \u001b[39m\u001b[36mclass\u001b[39m \u001b[33mLogin\u001b[39m \u001b[36mextends\u001b[39m \u001b[33mComponent\u001b[39m{\u001b[0m\n\u001b[0m \u001b[90m 5 | \u001b[39m\u001b[0m\n\u001b[0m\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 6 | \u001b[39m    onSubmitHandler \u001b[33m=\u001b[39m (e)\u001b[33m=>\u001b[39m {\u001b[0m\n\u001b[0m \u001b[90m   | \u001b[39m                    \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 7 | \u001b[39m        e\u001b[33m.\u001b[39mpreventDefault()\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 8 | \u001b[39m        axios\u001b[33m.\u001b[39mpost(\u001b[32m'/api/login'\u001b[39m\u001b[33m,\u001b[39m{\u001b[0m\n\u001b[0m \u001b[90m 9 | \u001b[39m            email\u001b[33m:\u001b[39m e\u001b[33m.\u001b[39mtarget\u001b[33m.\u001b[39memail\u001b[33m.\u001b[39mvalue\u001b[33m,\u001b[39m\u001b[0m\n\nAdd @babel/plugin-proposal-class-properties (https://git.io/vb4SL) to the 'plugins' section of your Babel config to enable transformation.\n    at Object.raise (/Applications/MAMP/htdocs/blog/node_modules/@babel/parser/lib/index.js:6322:17)\n    at Object.expectPlugin (/Applications/MAMP/htdocs/blog/node_modules/@babel/parser/lib/index.js:7643:18)\n    at Object.parseClassProperty (/Applications/MAMP/htdocs/blog/node_modules/@babel/parser/lib/index.js:10769:12)\n    at Object.pushClassProperty (/Applications/MAMP/htdocs/blog/node_modules/@babel/parser/lib/index.js:10734:30)\n    at Object.parseClassMemberWithIsStatic (/Applications/MAMP/htdocs/blog/node_modules/@babel/parser/lib/index.js:10673:14)\n    at Object.parseClassMember (/Applications/MAMP/htdocs/blog/node_modules/@babel/parser/lib/index.js:10607:10)\n    at withTopicForbiddingContext (/Applications/MAMP/htdocs/blog/node_modules/@babel/parser/lib/index.js:10562:14)\n    at Object.withTopicForbiddingContext (/Applications/MAMP/htdocs/blog/node_modules/@babel/parser/lib/index.js:9657:14)\n    at Object.parseClassBody (/Applications/MAMP/htdocs/blog/node_modules/@babel/parser/lib/index.js:10539:10)\n    at Object.parseClass (/Applications/MAMP/htdocs/blog/node_modules/@babel/parser/lib/index.js:10513:22)\n    at Object.parseStatementContent (/Applications/MAMP/htdocs/blog/node_modules/@babel/parser/lib/index.js:9805:21)\n    at Object.parseStatement (/Applications/MAMP/htdocs/blog/node_modules/@babel/parser/lib/index.js:9763:17)\n    at Object.parseBlockOrModuleBlockBody (/Applications/MAMP/htdocs/blog/node_modules/@babel/parser/lib/index.js:10340:25)\n    at Object.parseBlockBody (/Applications/MAMP/htdocs/blog/node_modules/@babel/parser/lib/index.js:10327:10)\n    at Object.parseTopLevel (/Applications/MAMP/htdocs/blog/node_modules/@babel/parser/lib/index.js:9692:10)\n    at Object.parse (/Applications/MAMP/htdocs/blog/node_modules/@babel/parser/lib/index.js:11209:17)\n    at parse (/Applications/MAMP/htdocs/blog/node_modules/@babel/parser/lib/index.js:11245:38)\n    at parser (/Applications/MAMP/htdocs/blog/node_modules/@babel/core/lib/transformation/normalize-file.js:170:34)\n    at normalizeFile (/Applications/MAMP/htdocs/blog/node_modules/@babel/core/lib/transformation/normalize-file.js:138:11)\n    at runSync (/Applications/MAMP/htdocs/blog/node_modules/@babel/core/lib/transformation/index.js:44:43)\n    at runAsync (/Applications/MAMP/htdocs/blog/node_modules/@babel/core/lib/transformation/index.js:35:14)\n    at process.nextTick (/Applications/MAMP/htdocs/blog/node_modules/@babel/core/lib/transform.js:34:34)\n    at process._tickCallback (internal/process/next_tick.js:61:11)");
 
 /***/ })
 

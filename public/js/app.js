@@ -62178,7 +62178,7 @@ function warning(message) {
 /*!***************************************************************!*\
   !*** ./node_modules/react-router-dom/esm/react-router-dom.js ***!
   \***************************************************************/
-/*! exports provided: MemoryRouter, Prompt, Redirect, Route, Router, StaticRouter, Switch, generatePath, matchPath, withRouter, __RouterContext, BrowserRouter, HashRouter, Link, NavLink */
+/*! exports provided: BrowserRouter, HashRouter, Link, NavLink, MemoryRouter, Prompt, Redirect, Route, Router, StaticRouter, Switch, generatePath, matchPath, withRouter, __RouterContext */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -67968,11 +67968,11 @@ var map = {
 	],
 	"./Example": [
 		"./resources/js/react/components/Example.js",
-		2
+		0
 	],
 	"./Example.js": [
 		"./resources/js/react/components/Example.js",
-		2
+		0
 	],
 	"./Home": [
 		"./resources/js/react/components/Home.js"
@@ -67988,27 +67988,27 @@ var map = {
 	],
 	"./auth/Login": [
 		"./resources/js/react/components/auth/Login.js",
-		0
+		1
 	],
 	"./auth/Login.js": [
 		"./resources/js/react/components/auth/Login.js",
-		0
+		1
 	],
 	"./auth/PasswordReset": [
 		"./resources/js/react/components/auth/PasswordReset.js",
-		4
+		2
 	],
 	"./auth/PasswordReset.js": [
 		"./resources/js/react/components/auth/PasswordReset.js",
-		4
+		2
 	],
 	"./auth/Signup": [
 		"./resources/js/react/components/auth/Signup.js",
-		1
+		3
 	],
 	"./auth/Signup.js": [
 		"./resources/js/react/components/auth/Signup.js",
-		1
+		3
 	]
 };
 function webpackAsyncContext(req) {
