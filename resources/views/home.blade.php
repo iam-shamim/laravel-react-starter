@@ -20,11 +20,10 @@
 </head>
 <body>
 <div id="root"></div>
-
 <script>
     const page_data = {
         isAuthenticated: '{!! auth()->check() !!}' === '1',
-        user: JSON.parse('{!! auth()->check()?json_encode(auth()->user()->only(['id','name','email'])):'{}' !!}')
+        user: JSON.parse('{!! auth()->check()?(json_encode(auth()->user()->only(['id','name','email']))):'{}' !!}')
     }
 </script>
 <script src="{{ asset('js/app.js') }}" defer></script>

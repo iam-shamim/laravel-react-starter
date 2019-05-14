@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { Redirect } from 'react-router'
 
 export default function (ComposedComponent) {
     class Authenticate extends Component{
         render() {
             if(this.props.isAuthenticated){
-                this.props.history.replace('/');
-                return false;
+                return <Redirect  to="/" />
             }else{
                 return (
                     <ComposedComponent {...this.props} />

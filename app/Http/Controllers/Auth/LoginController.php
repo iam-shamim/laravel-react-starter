@@ -54,24 +54,20 @@ class LoginController extends Controller
             if (Auth::attempt($credentials)) {
                 return response()->json(Auth::user()->only(['id','name','email']));
             }else{
-                return response()->json([
-                    'status'=> 'error',
-                    'msg'   => 'login failed'
-                ], 400);
+                throw new Exception('');
             }
         }catch (Exception $exception){
             return response()->json([
                 'status'=> 'error',
-                'msg'   => 'login failed'
+                'msg'   => 'Login failed'
             ], 400);
         }
     }
     public function logout(Request $request){
         Auth::logout();
-        return;
-        
-        $this->guard()->logout();
-        $request->session()->invalidate();
-        return $this->loggedOut($request) ?: redirect('/');
+        return response()->json([
+            'status'=> 'succcess',
+            'msg'   => 'Logout succeed'
+        ], 200);
     }
 }

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { Redirect } from 'react-router'
 
 export default function (ComposedComponent) {
     class Authenticate extends Component{
@@ -10,8 +11,7 @@ export default function (ComposedComponent) {
         }
         render() {
             if(!this.props.isAuthenticated){
-                this.props.history.push('/login');
-                return false;
+                return <Redirect  to="/login" />
             }else{
                 return (
                     <ComposedComponent {...this.props} />

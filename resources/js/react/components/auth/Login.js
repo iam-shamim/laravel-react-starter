@@ -1,46 +1,42 @@
-import React,{ Component } from 'react';
-import {NavLink} from 'react-router-dom'
-import server from '../../server';
-import {connect} from 'react-redux'
-import {login} from '../../store/action/authAction'
-import AlertUI from '../UI/AlertUI'
+import React from 'react';
+import {NavLink} from 'react-router-dom';
+import {connect} from 'react-redux';
+import {login} from '../../store/action/authAction';
+import { toastr } from 'react-redux-toastr';
+import Validator from 'validatorjs';
+import FormInput from '../../utils/FormInput';
 
-class Login extends Component{
+class Login extends FormInput{
     state = {
         form:{
             email: '',
             password: '',
             remember: ''
         },
-        form_button_disabled: false
-    };
-    inputValue  = (state, key, initialValue=false)=>{
-        return {
-            name: key,
-            value: initialValue?initialValue:state[key],
-            onChange: this.onChange
-        }
-    };
-    onChange = (e) => {
-        let value = (e.target.type === 'checkbox' && !e.target.checked)?"":e.target.value;
-        this.setState({
-            ...this.state,
-            form:{
-                ...this.state.form,
-                [e.target.name]: value
-            }
-        });
+        form_button_disabled: false,
+        msg: "Give it a click if you like.",
+        errors: new Validator([],[]).errors
     };
     onSubmit = (e)=> {
         e.preventDefault();
-        this.setState({
-            form_button_disabled: true
-        });
-        this.props.login(this.state.form).then(()=>{
-            this.setState({form_button_disabled: false});
-        }).catch((error)=>{
-            console.log(error.response);
-        });
+        this.setState({form_button_disabled: true});
+        const data = this.state.form;
+        let rules = {
+            email: 'required|email',
+            password: 'required|min:6'
+        };
+        const validation = new Validator(data, rules);
+        if(validation.passes()){
+            this.setState({errors: validation.errors});
+            this.props.login(this.state.form).then(()=>{
+                toastr.success('Success','Login succeed');
+            }).catch((error)=>{
+                toastr.error('Error',error.response.msg);
+                this.setState({form_button_disabled: false});
+            });
+        }else{
+            this.setState({form_button_disabled: false, errors: validation.errors});
+        }
     };
     render(){
         console.log('Login render -> '+new Date().toLocaleTimeString());
@@ -51,11 +47,11 @@ class Login extends Component{
                         <div className="card-header">Login</div>
                         <div className="card-body">
                             <form method="POST" action="/login" onSubmit={this.onSubmit}>
-                                <AlertUI msg="Give it a click if you like.  " />
                                 <div className="form-group row">
                                     <label htmlFor="email" className="col-md-4 col-form-label text-md-right">E-Mail Address</label>
                                     <div className="col-md-6">
-                                        <input id="email" type="email" className="form-control" {...this.inputValue(this.state.form,'email')} required autoFocus />
+                                        <input id="email" type="email" {...this.inputValue({state: this.state.form,key:'email'})} autoFocus />
+                                        { this.errorMsg({errors: this.state.errors, key: 'email'}) }
                                     </div>
                                 </div>
 
@@ -63,14 +59,15 @@ class Login extends Component{
                                     <label htmlFor="password" className="col-md-4 col-form-label text-md-right">Password</label>
 
                                     <div className="col-md-6">
-                                        <input id="password" type="password" className="form-control" {...this.inputValue(this.state.form,'password')} required />
+                                        <input id="password" type="password"  {...this.inputValue({state:this.state.form, key:'password'})} />
+                                        { this.errorMsg({errors: this.state.errors, key: 'password'}) }
                                     </div>
                                 </div>
 
                                 <div className="form-group row">
                                     <div className="col-md-6 offset-md-4">
                                         <div className="form-check">
-                                            <input className="form-check-input" type="checkbox" {...this.inputValue(this.state.form,'remember','on')} id="remember" />
+                                            <input type="checkbox" {...this.inputValue({ state: this.state.form, key: 'remember',initVal: 'on',classes:'form-check-input' })} id="remember" />
                                             <label className="form-check-label" htmlFor="remember">Remember Me</label>
                                         </div>
                                     </div>

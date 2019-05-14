@@ -5,7 +5,7 @@ import { logout } from '../store/action/authAction';
 
 class Nav extends Component {
     render() {
-        console.log('Nav render -> '+new Date().toLocaleTimeString())
+        console.log('Nav render -> '+new Date().toLocaleTimeString());
         let loginReg = "";
         let withAuth = "";
         if(!this.props.isAuthenticated) {

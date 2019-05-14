@@ -1,9 +1,9 @@
 (window["webpackJsonp"] = window["webpackJsonp"] || []).push([[3],{
 
-/***/ "./resources/js/react/components/auth/Signup.js":
-/*!******************************************************!*\
-  !*** ./resources/js/react/components/auth/Signup.js ***!
-  \******************************************************/
+/***/ "./resources/js/react/components/auth/PasswordReset.js":
+/*!*************************************************************!*\
+  !*** ./resources/js/react/components/auth/PasswordReset.js ***!
+  \*************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -13,7 +13,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 
 /* harmony default export */ __webpack_exports__["default"] = (function () {
-  console.log('Signup render -> ' + new Date().toLocaleTimeString());
+  console.log('Password Reset render -> ' + new Date().toLocaleTimeString());
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "row justify-content-center"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -22,26 +22,12 @@ __webpack_require__.r(__webpack_exports__);
     className: "card"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "card-header"
-  }, "Register"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  }, "Reset Password"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "card-body"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
     method: "POST",
-    action: "{{ route('register') }}"
+    action: "{{ route('password.update') }}"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "form-group row"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
-    htmlFor: "name",
-    className: "col-md-4 col-form-label text-md-right"
-  }, "Register"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "col-md-6"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-    id: "name",
-    type: "text",
-    className: "form-control",
-    name: "name",
-    required: true,
-    autoFocus: true
-  }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "form-group row"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
     htmlFor: "email",
@@ -53,7 +39,8 @@ __webpack_require__.r(__webpack_exports__);
     type: "email",
     className: "form-control",
     name: "email",
-    required: true
+    required: true,
+    autoFocus: true
   }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "form-group row"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
@@ -87,7 +74,7 @@ __webpack_require__.r(__webpack_exports__);
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
     type: "submit",
     className: "btn btn-primary"
-  }, "Register"))))))));
+  }, "Reset Password"))))))));
 });
 
 /***/ })

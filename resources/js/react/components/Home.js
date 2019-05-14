@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom'
 class Home extends Component {
+    state = {
+
+    }
     render() {
         console.log('Home render -> '+new Date().toLocaleTimeString());
         return (

@@ -7,6 +7,8 @@ import thunk from 'redux-thunk';
 import {BrowserRouter,Route, Switch} from 'react-router-dom'
 
 import rootReducer from '../rootReducer'
+import ReduxToastr from 'react-redux-toastr'
+
 import {component_load} from '../utils/component_load';
 import notAuth from '../utils/notAuth';
 import requireAuth from '../utils/requireAuth';
@@ -17,6 +19,15 @@ export default class App extends Component {
     render() {
         return (
             <div>
+                <ReduxToastr
+                    timeOut={6000}
+                    newestOnTop={false}
+                    position="top-right"
+                    transitionIn="fadeIn"
+                    transitionOut="fadeOut"
+                    progressBar
+                    closeOnToastrClick
+                />
                 <Nav />
                 <main className="py-4">
                     <div className="container">
