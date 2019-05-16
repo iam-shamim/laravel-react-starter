@@ -46,8 +46,12 @@ class LoginController extends Controller
                 'password' => 'required|string',
             ]);
             if($validator->fails()){
-                throw new Exception('');
-                //return response()->json($validator->messages(), 422);
+                $errors = $validator->messages();
+                return response()->json([
+                    'status'=>'error',
+                    'msg'=>'Validation failed',
+                    'errors'=>$errors
+                ], 422);
             }
             $credentials = $request->only('email', 'password');
 

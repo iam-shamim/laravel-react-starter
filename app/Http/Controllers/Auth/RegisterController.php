@@ -7,6 +7,9 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
+use Illuminate\Http\Request;
+use Illuminate\Auth\Events\Registered;
+use Exception;
 
 class RegisterController extends Controller
 {
@@ -68,5 +71,30 @@ class RegisterController extends Controller
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
         ]);
+    }
+    public function register(Request $request)
+    {
+        try{
+            $validator = $this->validator($request->all());
+            if($validator->fails()){
+                $errors = $validator->messages();
+                return response()->json([
+                    'status' => 'error',
+                    'msg' => 'Validation failed',
+                    'error_type' => 'validation_error',
+                    'errors' => $errors
+                ], 422);
+            }
+            event(new Registered($user = $this->create($request->all())));
+            return response()->json([
+                'status'=>'success',
+                'msg'=>'Registration succeed'
+            ]);
+        }catch (Exception $exception){
+            return response()->json([
+                'status'=> 'error',
+                'msg'   => 'Registration failed'
+            ], 400);
+        }
     }
 }

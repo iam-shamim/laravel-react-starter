@@ -1,94 +1,13 @@
 (window["webpackJsonp"] = window["webpackJsonp"] || []).push([[4],{
 
-/***/ "./resources/js/react/components/auth/Signup.js":
-/*!******************************************************!*\
-  !*** ./resources/js/react/components/auth/Signup.js ***!
-  \******************************************************/
+/***/ "./resources/js/react/components/auth/PasswordResetConfirm.js":
+/*!********************************************************************!*\
+  !*** ./resources/js/react/components/auth/PasswordResetConfirm.js ***!
+  \********************************************************************/
 /*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports) {
 
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-
-/* harmony default export */ __webpack_exports__["default"] = (function () {
-  console.log('Signup render -> ' + new Date().toLocaleTimeString());
-  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "row justify-content-center"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "col-md-8"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "card"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "card-header"
-  }, "Register"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "card-body"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
-    method: "POST",
-    action: "{{ route('register') }}"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "form-group row"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
-    htmlFor: "name",
-    className: "col-md-4 col-form-label text-md-right"
-  }, "Register"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "col-md-6"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-    id: "name",
-    type: "text",
-    className: "form-control",
-    name: "name",
-    required: true,
-    autoFocus: true
-  }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "form-group row"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
-    htmlFor: "email",
-    className: "col-md-4 col-form-label text-md-right"
-  }, "E-Mail Address"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "col-md-6"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-    id: "email",
-    type: "email",
-    className: "form-control",
-    name: "email",
-    required: true
-  }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "form-group row"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
-    htmlFor: "password",
-    className: "col-md-4 col-form-label text-md-right"
-  }, "Password"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "col-md-6"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-    id: "password",
-    type: "password",
-    className: "form-control",
-    name: "password",
-    required: true
-  }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "form-group row"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
-    htmlFor: "password-confirm",
-    className: "col-md-4 col-form-label text-md-right"
-  }, "Confirm Password"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "col-md-6"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-    id: "password-confirm",
-    type: "password",
-    className: "form-control",
-    name: "password_confirmation",
-    required: true
-  }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "form-group row mb-0"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "col-md-6 offset-md-4"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-    type: "submit",
-    className: "btn btn-primary"
-  }, "Register"))))))));
-});
+throw new Error("Module build failed (from ./node_modules/babel-loader/lib/index.js):\nSyntaxError: /Applications/MAMP/htdocs/blog/resources/js/react/components/auth/PasswordResetConfirm.js: Only one default export allowed per module. (94:0)\n\n\u001b[0m \u001b[90m 92 | \u001b[39m}\u001b[0m\n\u001b[0m \u001b[90m 93 | \u001b[39m\u001b[36mexport\u001b[39m \u001b[36mdefault\u001b[39m connect(\u001b[36mfalse\u001b[39m\u001b[33m,\u001b[39m{login})(\u001b[33mFormHandler\u001b[39m(\u001b[33mLogin\u001b[39m))\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 94 | \u001b[39m\u001b[36mexport\u001b[39m \u001b[36mdefault\u001b[39m ()\u001b[33m=>\u001b[39m{\u001b[0m\n\u001b[0m \u001b[90m    | \u001b[39m\u001b[31m\u001b[1m^\u001b[22m\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 95 | \u001b[39m    console\u001b[33m.\u001b[39mlog(\u001b[32m'Password Reset Confirm render -> '\u001b[39m\u001b[33m+\u001b[39m\u001b[36mnew\u001b[39m \u001b[33mDate\u001b[39m()\u001b[33m.\u001b[39mtoLocaleTimeString())\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 96 | \u001b[39m    \u001b[36mreturn\u001b[39m (\u001b[0m\n\u001b[0m \u001b[90m 97 | \u001b[39m        \u001b[33m<\u001b[39m\u001b[33mdiv\u001b[39m className\u001b[33m=\u001b[39m\u001b[32m\"row justify-content-center\"\u001b[39m\u001b[33m>\u001b[39m\u001b[0m\n    at Object.raise (/Applications/MAMP/htdocs/blog/node_modules/@babel/parser/lib/index.js:6322:17)\n    at Object.checkDuplicateExports (/Applications/MAMP/htdocs/blog/node_modules/@babel/parser/lib/index.js:11071:18)\n    at Object.checkExport (/Applications/MAMP/htdocs/blog/node_modules/@babel/parser/lib/index.js:11006:14)\n    at Object.parseExport (/Applications/MAMP/htdocs/blog/node_modules/@babel/parser/lib/index.js:10845:12)\n    at Object.parseStatementContent (/Applications/MAMP/htdocs/blog/node_modules/@babel/parser/lib/index.js:9867:27)\n    at Object.parseStatement (/Applications/MAMP/htdocs/blog/node_modules/@babel/parser/lib/index.js:9763:17)\n    at Object.parseBlockOrModuleBlockBody (/Applications/MAMP/htdocs/blog/node_modules/@babel/parser/lib/index.js:10340:25)\n    at Object.parseBlockBody (/Applications/MAMP/htdocs/blog/node_modules/@babel/parser/lib/index.js:10327:10)\n    at Object.parseTopLevel (/Applications/MAMP/htdocs/blog/node_modules/@babel/parser/lib/index.js:9692:10)\n    at Object.parse (/Applications/MAMP/htdocs/blog/node_modules/@babel/parser/lib/index.js:11209:17)\n    at parse (/Applications/MAMP/htdocs/blog/node_modules/@babel/parser/lib/index.js:11245:38)\n    at parser (/Applications/MAMP/htdocs/blog/node_modules/@babel/core/lib/transformation/normalize-file.js:170:34)\n    at normalizeFile (/Applications/MAMP/htdocs/blog/node_modules/@babel/core/lib/transformation/normalize-file.js:138:11)\n    at runSync (/Applications/MAMP/htdocs/blog/node_modules/@babel/core/lib/transformation/index.js:44:43)\n    at runAsync (/Applications/MAMP/htdocs/blog/node_modules/@babel/core/lib/transformation/index.js:35:14)\n    at process.nextTick (/Applications/MAMP/htdocs/blog/node_modules/@babel/core/lib/transform.js:34:34)\n    at process._tickCallback (internal/process/next_tick.js:61:11)");
 
 /***/ })
 

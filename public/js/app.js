@@ -70270,11 +70270,11 @@ var map = {
 	],
 	"./Example": [
 		"./resources/js/react/components/Example.js",
-		1
+		2
 	],
 	"./Example.js": [
 		"./resources/js/react/components/Example.js",
-		1
+		2
 	],
 	"./Home": [
 		"./resources/js/react/components/Home.js"
@@ -70291,28 +70291,42 @@ var map = {
 	"./auth/Login": [
 		"./resources/js/react/components/auth/Login.js",
 		0,
-		2
+		1
 	],
 	"./auth/Login.js": [
 		"./resources/js/react/components/auth/Login.js",
 		0,
-		2
+		1
 	],
 	"./auth/PasswordReset": [
 		"./resources/js/react/components/auth/PasswordReset.js",
-		3
+		0,
+		6
 	],
 	"./auth/PasswordReset.js": [
 		"./resources/js/react/components/auth/PasswordReset.js",
+		0,
+		6
+	],
+	"./auth/PasswordResetConfirm": [
+		"./resources/js/react/components/auth/PasswordResetConfirm.js",
+		0,
+		3
+	],
+	"./auth/PasswordResetConfirm.js": [
+		"./resources/js/react/components/auth/PasswordResetConfirm.js",
+		0,
 		3
 	],
 	"./auth/Signup": [
 		"./resources/js/react/components/auth/Signup.js",
-		4
+		0,
+		5
 	],
 	"./auth/Signup.js": [
 		"./resources/js/react/components/auth/Signup.js",
-		4
+		0,
+		5
 	]
 };
 function webpackAsyncContext(req) {
@@ -70440,6 +70454,10 @@ function (_Component) {
         path: "/password/reset",
         exact: true,
         component: Object(_utils_notAuth__WEBPACK_IMPORTED_MODULE_10__["default"])(Object(_utils_component_load__WEBPACK_IMPORTED_MODULE_9__["component_load"])('auth/PasswordReset'))
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_6__["Route"], {
+        path: "/password/reset/:token",
+        exact: true,
+        component: Object(_utils_notAuth__WEBPACK_IMPORTED_MODULE_10__["default"])(Object(_utils_component_load__WEBPACK_IMPORTED_MODULE_9__["component_load"])('auth/PasswordResetConfirm'))
       })))));
     }
   }]);
@@ -70707,16 +70725,22 @@ __webpack_require__.r(__webpack_exports__);
 /*!*******************************************************!*\
   !*** ./resources/js/react/store/action/authAction.js ***!
   \*******************************************************/
-/*! exports provided: logout, login */
+/*! exports provided: logout, login, resetPassword, signup, resetPasswordAction */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "logout", function() { return logout; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "login", function() { return login; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "resetPassword", function() { return resetPassword; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "signup", function() { return signup; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "resetPasswordAction", function() { return resetPasswordAction; });
 /* harmony import */ var _server__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../server */ "./resources/js/react/server.js");
 /* harmony import */ var _types__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./types */ "./resources/js/react/store/action/types.js");
 /* harmony import */ var _utils_errorCatch__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../utils/errorCatch */ "./resources/js/react/utils/errorCatch.js");
+/* harmony import */ var react_redux_toastr__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-redux-toastr */ "./node_modules/react-redux-toastr/lib/index.js");
+/* harmony import */ var react_redux_toastr__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react_redux_toastr__WEBPACK_IMPORTED_MODULE_3__);
+
 
 
 
@@ -70739,6 +70763,7 @@ var logout = function logout() {
   return function (dispatch) {
     return _server__WEBPACK_IMPORTED_MODULE_0__["default"].post('/api/logout').then(function (res) {
       dispatch(setLogout());
+      react_redux_toastr__WEBPACK_IMPORTED_MODULE_3__["toastr"].success('Success', 'Logout succeed');
     })["catch"](function (err) {
       return Object(_utils_errorCatch__WEBPACK_IMPORTED_MODULE_2__["default"])(err);
     });
@@ -70748,6 +70773,33 @@ var login = function login(data) {
   return function (dispatch) {
     return _server__WEBPACK_IMPORTED_MODULE_0__["default"].post('/api/login', data).then(function (res) {
       dispatch(setCurrentUser(res.data));
+    })["catch"](function (err) {
+      return Object(_utils_errorCatch__WEBPACK_IMPORTED_MODULE_2__["default"])(err);
+    });
+  };
+};
+var resetPassword = function resetPassword(data) {
+  return function (dispatch) {
+    return _server__WEBPACK_IMPORTED_MODULE_0__["default"].post('/api/password/email', data).then(function (res) {
+      return res;
+    })["catch"](function (err) {
+      return Object(_utils_errorCatch__WEBPACK_IMPORTED_MODULE_2__["default"])(err);
+    });
+  };
+};
+var signup = function signup(data) {
+  return function (dispatch) {
+    return _server__WEBPACK_IMPORTED_MODULE_0__["default"].post('/api/register', data).then(function (res) {
+      return res;
+    })["catch"](function (err) {
+      return Object(_utils_errorCatch__WEBPACK_IMPORTED_MODULE_2__["default"])(err);
+    });
+  };
+};
+var resetPasswordAction = function resetPasswordAction(data) {
+  return function (dispatch) {
+    return _server__WEBPACK_IMPORTED_MODULE_0__["default"].post('/api/password/reset', data).then(function (res) {
+      return res;
     })["catch"](function (err) {
       return Object(_utils_errorCatch__WEBPACK_IMPORTED_MODULE_2__["default"])(err);
     });

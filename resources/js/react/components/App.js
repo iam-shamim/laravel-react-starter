@@ -19,15 +19,7 @@ export default class App extends Component {
     render() {
         return (
             <div>
-                <ReduxToastr
-                    timeOut={6000}
-                    newestOnTop={false}
-                    position="top-right"
-                    transitionIn="fadeIn"
-                    transitionOut="fadeOut"
-                    progressBar
-                    closeOnToastrClick
-                />
+                <ReduxToastr timeOut={6000} newestOnTop={false} position="top-right" transitionIn="fadeIn" transitionOut="fadeOut" progressBar closeOnToastrClick />
                 <Nav />
                 <main className="py-4">
                     <div className="container">
@@ -36,6 +28,7 @@ export default class App extends Component {
                             <Route path="/login" exact  component={notAuth(component_load('auth/Login'))} />
                             <Route path="/register" exact  component={notAuth(component_load('auth/Signup'))} />
                             <Route path="/password/reset" exact  component={notAuth(component_load('auth/PasswordReset'))} />
+                            <Route path="/password/reset/:token" exact  component={notAuth(component_load('auth/PasswordResetConfirm'))} />
                         </Switch>
                     </div>
                 </main>
