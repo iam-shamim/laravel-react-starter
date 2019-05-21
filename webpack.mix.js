@@ -14,11 +14,17 @@ require('laravel-mix-react-css-modules');
  */
 
 
-mix.react('resources/js/app.js', 'public/js').reactCSSModules().version().sourceMaps();;
+mix.webpackConfig({
+    output: {
+        filename:'[name].js',
+        chunkFilename: 'js/mix/chunks/[name].js'
+    }
+});
+mix.react('resources/js/app.js', 'public/js/mix/').reactCSSModules().version();
 //mix.sass('resources/sass/app.scss', 'public/css').version();
 mix.styles([
     'public/bootstrap/css/bootstrap.css',
     'public/bootstrap/css/bootstrap-grid.css',
     'node_modules/react-redux-toastr/lib/css/react-redux-toastr.min.css',
     'resources/css/app.css'
-],'public/css/app.css').version();
+],'public/css/mix/app.css').version();

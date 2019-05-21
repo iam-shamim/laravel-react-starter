@@ -10,7 +10,7 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Styles -->
-    <link href="{{ asset(mix('css/app.css')) }}" rel="stylesheet">
+    <link href="{{ asset(mix('css/mix/app.css')) }}" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
@@ -21,6 +21,6 @@
         user: JSON.parse('{!! auth()->check()?(json_encode(auth()->user()->only(['id','name','email']))):'{}' !!}')
     }
 </script>
-<script src="{{ asset(mix('js/app.js')) }}" defer></script>
+<script src="{{ asset(mix('js/mix/app.js')) }}" defer></script>
 </body>
 </html>
