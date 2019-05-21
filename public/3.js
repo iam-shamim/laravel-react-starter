@@ -331,7 +331,7 @@ function (_Component) {
         disabled: this.state.form_button_disabled
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
         className: "fa-custom fa-refresh-custom fa-spin-custom"
-      }), "Register"))))))));
+      }), "Reset Password"))))))));
     }
   }]);
 

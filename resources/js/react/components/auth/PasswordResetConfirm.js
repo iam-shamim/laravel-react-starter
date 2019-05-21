@@ -87,7 +87,7 @@ class PasswordResetConfirm extends Component{
                                     <div className="col-md-6 offset-md-4">
                                         <button type="submit" className="btn btn-primary disabled_loading" disabled={this.state.form_button_disabled}>
                                             <i className="fa-custom fa-refresh-custom fa-spin-custom"></i>
-                                            Register
+                                            Reset Password
                                         </button>
                                     </div>
                                 </div>

@@ -58,7 +58,10 @@ class LoginController extends Controller
             if (Auth::attempt($credentials)) {
                 return response()->json(Auth::user()->only(['id','name','email']));
             }else{
-                throw new Exception('');
+                return response()->json([
+                    'status'=> 'error',
+                    'msg'   => 'Email or password not matched'
+                ], 400);
             }
         }catch (Exception $exception){
             return response()->json([

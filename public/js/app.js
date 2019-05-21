@@ -70270,11 +70270,11 @@ var map = {
 	],
 	"./Example": [
 		"./resources/js/react/components/Example.js",
-		2
+		5
 	],
 	"./Example.js": [
 		"./resources/js/react/components/Example.js",
-		2
+		5
 	],
 	"./Home": [
 		"./resources/js/react/components/Home.js"
@@ -70301,12 +70301,12 @@ var map = {
 	"./auth/PasswordReset": [
 		"./resources/js/react/components/auth/PasswordReset.js",
 		0,
-		6
+		2
 	],
 	"./auth/PasswordReset.js": [
 		"./resources/js/react/components/auth/PasswordReset.js",
 		0,
-		6
+		2
 	],
 	"./auth/PasswordResetConfirm": [
 		"./resources/js/react/components/auth/PasswordResetConfirm.js",
@@ -70321,12 +70321,12 @@ var map = {
 	"./auth/Signup": [
 		"./resources/js/react/components/auth/Signup.js",
 		0,
-		5
+		4
 	],
 	"./auth/Signup.js": [
 		"./resources/js/react/components/auth/Signup.js",
 		0,
-		5
+		4
 	]
 };
 function webpackAsyncContext(req) {
@@ -70877,14 +70877,24 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "component_load", function() { return component_load; });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+ //<ComponentLoad {...props} />
 
 var component_load = function component_load(Component) {
   var ComponentLoad = Object(react__WEBPACK_IMPORTED_MODULE_0__["lazy"])(function () {
     return __webpack_require__("./resources/js/react/components lazy recursive ^\\.\\/.*$")("./" + Component);
   });
+  var loading_component_spinner = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "text-center"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+    "class": "fa fa-spinner fa-pulse fa-fw",
+    "aria-hidden": "true",
+    id: "loading_component_spinner"
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    "class": "sr-only"
+  }, "Loading..."));
   return function (props) {
     return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0__["Suspense"], {
-      fallback: react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "Loading...")
+      fallback: loading_component_spinner
     }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(ComponentLoad, props));
   };
 };
@@ -71066,26 +71076,14 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 
 /***/ }),
 
-/***/ "./resources/sass/app.scss":
-/*!*********************************!*\
-  !*** ./resources/sass/app.scss ***!
-  \*********************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-
 /***/ 0:
-/*!*************************************************************!*\
-  !*** multi ./resources/js/app.js ./resources/sass/app.scss ***!
-  \*************************************************************/
+/*!***********************************!*\
+  !*** multi ./resources/js/app.js ***!
+  \***********************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /Applications/MAMP/htdocs/blog/resources/js/app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! /Applications/MAMP/htdocs/blog/resources/sass/app.scss */"./resources/sass/app.scss");
+module.exports = __webpack_require__(/*! /Applications/MAMP/htdocs/laravel-react-starter/resources/js/app.js */"./resources/js/app.js");
 
 
 /***/ })

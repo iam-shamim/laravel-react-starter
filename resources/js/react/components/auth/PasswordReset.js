@@ -62,7 +62,7 @@ class Login extends Component{
                                 <div className="form-group row mb-0">
                                     <div className="col-md-6 offset-md-4">
                                         <button type="submit" className="btn btn-primary disabled_loading" disabled={this.state.form_button_disabled}>
-                                            <i className="fa-custom fa-refresh-custom fa-spin-custom"></i> Login
+                                            <i className="fa-custom fa-refresh-custom fa-spin-custom"></i> Send Password Reset Link
                                         </button>
                                     </div>
                                 </div>
